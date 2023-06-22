@@ -1,0 +1,9 @@
+const String heading = "Hi There! 👋";
+const String body = "Welcome Back! Sign In to your account";
+const String forgotPassword = "Forgot Password?";
+const String signIn = "SIGN IN";
+const String signInOtp = "SIGN IN WITH OTP";
+const String noAccount = "Don’t have an account? ";
+const String signUp = "SIGN UP";
+const String hintText = "Enter your mobile number";
+const String passwordText = "Enter Password";
