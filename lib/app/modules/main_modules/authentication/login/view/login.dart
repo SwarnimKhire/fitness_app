@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:nurasoft_app/app/core/core.dart';
 import 'package:nurasoft_app/app/modules/helper_modules/helper_modules.dart';
 import 'package:nurasoft_app/app/modules/main_modules/authentication/login/view/login_strings.dart';
@@ -45,9 +46,16 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             MainTextButton(
-              text: signIn,
-              onTap: () => context.pushNamed(AppRoutes.home),
-            ),
+                text: signIn,
+                onTap: () {
+                  viewModel.validateLogin((value) {
+                    if (value) {
+                      context.pushNamed(AppRoutes.home);
+                    } else {
+                      Fluttertoast.showToast(msg: "Invalid User Credentials");
+                    }
+                  });
+                }),
             const SizedBox(height: 15),
             const Row(
               children: [

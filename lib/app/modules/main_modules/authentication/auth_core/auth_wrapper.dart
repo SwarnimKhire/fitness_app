@@ -1,5 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:nurasoft_app/app/modules/main_modules/authentication/auth_core/models/user_model.dart';
 import 'package:nurasoft_app/app/routes/routes.dart';
 import 'package:nurasoft_app/main.dart';
+
+
 
 String isUserLoggedIn() {
   String? userstring = sharedPreferences.getString("user");
@@ -9,3 +13,5 @@ String isUserLoggedIn() {
     return AppRoutes.login;
   }
 }
+
+

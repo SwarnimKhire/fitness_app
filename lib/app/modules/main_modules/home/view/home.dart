@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nurasoft_app/app/core/core.dart';
-import 'package:nurasoft_app/app/modules/helper_modules/appbar/main_appbar.dart';
 import 'package:nurasoft_app/app/modules/helper_modules/card.dart';
-import 'package:nurasoft_app/app/modules/helper_modules/texts/body_medium_semibold.dart';
+import 'package:nurasoft_app/app/modules/helper_modules/helper_modules.dart';
 import 'package:nurasoft_app/app/modules/main_modules/home/view/homescreens.dart';
+import 'package:nurasoft_app/app/routes/routes.dart';
+import 'package:nurasoft_app/main.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -70,8 +71,15 @@ class HomePage extends StatelessWidget {
                 GridCard(),
                 GridCard(isGreen: true)
               ],
+            ),
+            const SizedBox(height: 85.0),
+            MainTextButton(
+              text: "Log Out",
+              onTap: () {
+                sharedPreferences.remove("user");
+                context.pushNamed(AppRoutes.login);
+              },
             )
-
           ],
         ),
       ),
