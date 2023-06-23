@@ -9,6 +9,7 @@ import 'package:nurasoft_app/app/modules/main_modules/authentication/signup/view
 import 'package:nurasoft_app/app/modules/main_modules/home/view/home.dart';
 import 'package:nurasoft_app/app/modules/main_modules/trackers/food_tracker/view/food_page.dart';
 import 'package:nurasoft_app/app/modules/main_modules/trackers/food_tracker/view/food_tracker_view.dart';
+import 'package:nurasoft_app/app/modules/main_modules/trackers/food_tracker/view_model/food_viewmodel.dart';
 import 'package:nurasoft_app/app/modules/main_modules/trackers/sleep/view/sleep_view.dart';
 import 'package:nurasoft_app/app/modules/main_modules/trackers/water/view/water_tracker_view.dart';
 import 'package:nurasoft_app/app/modules/main_modules/trackers/workout/view/video_card.dart';
@@ -44,18 +45,22 @@ Route<dynamic> controller(RouteSettings routeSettings) {
     case AppRoutes.recoverPassword:
       return MaterialPageRoute(builder: (context) => const PasswordRecovery());
     case AppRoutes.foodTracker:
-      return MaterialPageRoute(builder: (context) => const FoodTrackerView());
+      return MaterialPageRoute(
+          builder: (context) => ChangeNotifierProvider(
+                child: const FoodTrackerView(),
+                create: (context) => FoodViewModel(),
+              ));
     case AppRoutes.sleepTracker:
       return MaterialPageRoute(builder: (context) => const SleepTrackerView());
     case AppRoutes.waterTracker:
       return MaterialPageRoute(builder: (context) => const WaterTrackerView());
-       case AppRoutes.workoutTracker:
+    case AppRoutes.workoutTracker:
       return MaterialPageRoute(builder: (context) => const WorkoutView());
     case AppRoutes.resetPassword:
       return MaterialPageRoute(builder: (context) => const PasswordReset());
-       case AppRoutes.foodpage:
+    case AppRoutes.foodpage:
       return MaterialPageRoute(builder: (context) => const FoodPage());
-      case AppRoutes.videocard:
+    case AppRoutes.videocard:
       return MaterialPageRoute(builder: (context) => const VideoCard());
     case AppRoutes.verifyotp:
       return MaterialPageRoute(

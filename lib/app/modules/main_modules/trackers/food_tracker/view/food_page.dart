@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nurasoft_app/app/core/theme/color_theme.dart';
 import 'package:nurasoft_app/app/modules/helper_modules/helper_modules.dart';
+import 'package:nurasoft_app/app/modules/main_modules/authentication/auth_core/auth_wrapper.dart';
 
 class FoodPage extends StatelessWidget {
   const FoodPage({super.key});
@@ -31,7 +32,9 @@ class FoodPage extends StatelessWidget {
                 subtitle: TextBSM(
                     'Calorie Value : ${calorieValues[index].toString()}'),
                 trailing: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    addFood();
+                  },
                   child: Container(
                     height: 25,
                     width: 25,
