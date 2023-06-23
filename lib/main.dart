@@ -13,6 +13,7 @@ void main() async {
 
 late String initialRoute;
 late SharedPreferences sharedPreferences;
+GlobalKey<NavigatorState> navigatorekey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(scaffoldBackgroundColor: whiteColor),
       initialRoute: initialRoute,
       onGenerateRoute: route.controller,
+      navigatorKey: navigatorekey,
     );
   }
 }
