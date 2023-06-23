@@ -20,6 +20,21 @@ class HomePage extends StatelessWidget {
           child: SvgPicture.asset(AssetSvg.menu),
         ),
         title: homeTitle,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: GestureDetector(
+              onTap: () {
+                context.pushNamed(AppRoutes.profile);
+              },
+              child: const Icon(
+                Icons.account_circle_outlined,
+                color: blackColor,
+                size: 35,
+              ),
+            ),
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
@@ -70,6 +85,7 @@ class HomePage extends StatelessWidget {
                   child: const GridCard(
                     isGreen: true,
                     title: 'Water Tracker',
+                    img: 'waterr',
                   ),
                   onTap: () {
                     context.pushNamed(AppRoutes.waterTracker);
@@ -78,6 +94,7 @@ class HomePage extends StatelessWidget {
                 InkWell(
                   child: const GridCard(
                     title: 'Sleep Tracker',
+                    img: 'sleep',
                   ),
                   onTap: () {
                     context.pushNamed(AppRoutes.sleepTracker);
@@ -86,6 +103,7 @@ class HomePage extends StatelessWidget {
                 InkWell(
                   child: const GridCard(
                     title: 'Workout Tracker',
+                    img: 'w80',
                   ),
                   onTap: () {
                     context.pushNamed(AppRoutes.workoutTracker);
@@ -95,6 +113,7 @@ class HomePage extends StatelessWidget {
                   child: const GridCard(
                     isGreen: true,
                     title: 'Calorie Tracker',
+                    img: 'caloo',
                   ),
                   onTap: () {
                     context.pushNamed(AppRoutes.foodTracker);

@@ -10,7 +10,7 @@ class TextBMSB extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: text600.copyWith(fontSize: 14, color: color ?? primaryColor),
+      style: text600.copyWith(fontSize: 15, color: color ?? primaryColor),
       textAlign: textAlign,
     );
   }
