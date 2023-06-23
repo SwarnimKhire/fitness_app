@@ -84,11 +84,11 @@ class HomePage extends StatelessWidget {
                 InkWell(
                   child: const GridCard(
                     isGreen: true,
-                    title: 'Water Tracker',
-                    img: 'waterr',
+                    title: 'Workout Tracker',
+                    img: 'w80',
                   ),
                   onTap: () {
-                    context.pushNamed(AppRoutes.waterTracker);
+                    context.pushNamed(AppRoutes.workoutTracker);
                   },
                 ),
                 InkWell(
@@ -102,11 +102,11 @@ class HomePage extends StatelessWidget {
                 ),
                 InkWell(
                   child: const GridCard(
-                    title: 'Workout Tracker',
-                    img: 'w80',
+                    title: 'Water Tracker',
+                    img: 'waterr',
                   ),
                   onTap: () {
-                    context.pushNamed(AppRoutes.workoutTracker);
+                    context.pushNamed(AppRoutes.waterTracker);
                   },
                 ),
                 InkWell(
