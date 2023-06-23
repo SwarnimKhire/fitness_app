@@ -62,14 +62,44 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            const Wrap(
+            Wrap(
               spacing: 15,
               runSpacing: 15,
               children: [
-                GridCard(isGreen: true),
-                GridCard(),
-                GridCard(),
-                GridCard(isGreen: true)
+                InkWell(
+                  child: const GridCard(
+                    isGreen: true,
+                    title: 'Water Tracker',
+                  ),
+                  onTap: () {
+                    context.pushNamed(AppRoutes.waterTracker);
+                  },
+                ),
+                InkWell(
+                  child: const GridCard(
+                    title: 'Sleep Tracker',
+                  ),
+                  onTap: () {
+                    context.pushNamed(AppRoutes.sleepTracker);
+                  },
+                ),
+                InkWell(
+                  child: const GridCard(
+                    title: 'Workout Tracker',
+                  ),
+                  onTap: () {
+                    context.pushNamed(AppRoutes.workoutTracker);
+                  },
+                ),
+                InkWell(
+                  child: const GridCard(
+                    isGreen: true,
+                    title: 'Calorie Tracker',
+                  ),
+                  onTap: () {
+                    context.pushNamed(AppRoutes.foodTracker);
+                  },
+                )
               ],
             ),
             const SizedBox(height: 85.0),

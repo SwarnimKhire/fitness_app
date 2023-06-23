@@ -2,8 +2,6 @@ import 'package:nurasoft_app/app/modules/main_modules/trackers/food_tracker/mode
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-
-
 class FoodTracker {
   static final FoodTracker _instance = FoodTracker._internal();
   factory FoodTracker() => _instance;

@@ -6,8 +6,9 @@ import '../../core/theme/color_theme.dart';
 import '../../core/values/constant.dart';
 
 class GridCard extends StatelessWidget {
-  const GridCard({super.key, this.isGreen = false});
+  const GridCard({super.key, this.isGreen = false, required this.title});
   final bool isGreen;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,11 +25,11 @@ class GridCard extends StatelessWidget {
             padding: const EdgeInsets.only(left: 118.0, top: 15, right: 16),
             child: SvgPicture.asset(AssetSvg.refresh),
           ),
-          const Padding(
-            padding:
-                EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0, top: 80),
+          Padding(
+            padding: const EdgeInsets.only(
+                left: 30.0, right: 16.0, bottom: 16.0, top: 80),
             child: TextBMSB(
-              'Spend or\nsave daily',
+              title,
               color: whiteColor,
             ),
           )
